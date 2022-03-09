@@ -24,8 +24,8 @@
       var r = Object.create(null);
       if (
         (n.r(r),
-        Object.defineProperty(r, "default", { enumerable: !0, value: e }),
-        2 & t && "string" != typeof e)
+          Object.defineProperty(r, "default", { enumerable: !0, value: e }),
+          2 & t && "string" != typeof e)
       )
         for (var i in e)
           n.d(
@@ -41,11 +41,11 @@
       var t =
         e && e.__esModule
           ? function () {
-              return e.default;
-            }
+            return e.default;
+          }
           : function () {
-              return e;
-            };
+            return e;
+          };
       return n.d(t, "a", t), t;
     }),
     (n.o = function (e, t) {
@@ -67,9 +67,9 @@
             var s = "function" == typeof n;
             s &&
               ((u = n),
-              (n = function (e, t) {
-                return u(e.text, t.startIndex);
-              }));
+                (n = function (e, t) {
+                  return u(e.text, t.startIndex);
+                }));
             var u;
             var l = i(t, {
               find: e,
@@ -227,16 +227,16 @@
               (r =
                 "string" == typeof r
                   ? RegExp(
-                      String(r).replace(/([.*+?^=!:${}()|[\]\/\\])/g, "\\$1"),
-                      "g"
-                    )
+                    String(r).replace(/([.*+?^=!:${}()|[\]\/\\])/g, "\\$1"),
+                    "g"
+                  )
                   : r),
               (function i(s) {
                 for (var u = 0, l = s.length; u < l; ++u) {
                   var d = s[u];
                   if ("string" == typeof d) {
                     if (r.global)
-                      for (; (e = r.exec(d)); ) o.push(a.prepMatch(e, t++, n));
+                      for (; (e = r.exec(d));) o.push(a.prepMatch(e, t++, n));
                     else (e = d.match(r)) && o.push(a.prepMatch(e, 0, n));
                     n += d.length;
                   } else i(d);
@@ -292,31 +292,31 @@
               l = 0,
               d = 0,
               c = [i];
-            e: for (;;) {
+            e: for (; ;) {
               if (
                 (s.nodeType === Node.TEXT_NODE &&
                   (!t && s.length + l >= u.endIndex
                     ? (t = {
-                        node: s,
-                        index: d++,
-                        text: s.data.substring(
-                          u.startIndex - l,
-                          u.endIndex - l
-                        ),
-                        indexInMatch: 0 === l ? 0 : l - u.startIndex,
-                        indexInNode: u.startIndex - l,
-                        endIndexInNode: u.endIndex - l,
-                        isEnd: !0,
-                      })
+                      node: s,
+                      index: d++,
+                      text: s.data.substring(
+                        u.startIndex - l,
+                        u.endIndex - l
+                      ),
+                      indexInMatch: 0 === l ? 0 : l - u.startIndex,
+                      indexInNode: u.startIndex - l,
+                      endIndexInNode: u.endIndex - l,
+                      isEnd: !0,
+                    })
                     : e &&
-                      a.push({
-                        node: s,
-                        index: d++,
-                        text: s.data,
-                        indexInMatch: l - u.startIndex,
-                        indexInNode: 0,
-                      }),
-                  !e &&
+                    a.push({
+                      node: s,
+                      index: d++,
+                      text: s.data,
+                      indexInMatch: l - u.startIndex,
+                      indexInNode: 0,
+                    }),
+                    !e &&
                     s.length + l > u.startIndex &&
                     (e = {
                       node: s,
@@ -326,19 +326,19 @@
                       endIndexInNode: u.endIndex - l,
                       text: s.data.substring(u.startIndex - l, u.endIndex - l),
                     }),
-                  (l += s.data.length)),
-                (n = s.nodeType === Node.ELEMENT_NODE && o && !o(s)),
-                e && t)
+                    (l += s.data.length)),
+                  (n = s.nodeType === Node.ELEMENT_NODE && o && !o(s)),
+                  e && t)
               ) {
                 if (
                   ((s = this.replaceMatch(u, e, a, t)),
-                  (l -= t.node.data.length - t.endIndexInNode),
-                  (e = null),
-                  (t = null),
-                  (a = []),
-                  (d = 0),
-                  0,
-                  !(u = r.shift()))
+                    (l -= t.node.data.length - t.endIndexInNode),
+                    (e = null),
+                    (t = null),
+                    (a = []),
+                    (d = 0),
+                    0,
+                    !(u = r.shift()))
                 )
                   break;
               } else if (!n && (s.firstChild || s.nextSibling)) {
@@ -347,7 +347,7 @@
                   : (s = s.nextSibling);
                 continue;
               }
-              for (;;) {
+              for (; ;) {
                 if (s.nextSibling) {
                   s = s.nextSibling;
                   break;
@@ -357,7 +357,7 @@
             }
           },
           revert: function () {
-            for (var e = this.reverts.length; e--; ) this.reverts[e]();
+            for (var e = this.reverts.length; e--;) this.reverts[e]();
             this.reverts = [];
           },
           prepareReplacementString: function (e, t, n) {
@@ -365,27 +365,27 @@
             return "first" === r && t.indexInMatch > 0
               ? ""
               : ((e = e.replace(/\$(\d+|&|`|')/g, function (e, t) {
-                  var r;
-                  switch (t) {
-                    case "&":
-                      r = n[0];
-                      break;
-                    case "`":
-                      r = n.input.substring(0, n.startIndex);
-                      break;
-                    case "'":
-                      r = n.input.substring(n.endIndex);
-                      break;
-                    default:
-                      r = n[+t] || "";
-                  }
-                  return r;
-                })),
+                var r;
+                switch (t) {
+                  case "&":
+                    r = n[0];
+                    break;
+                  case "`":
+                    r = n.input.substring(0, n.startIndex);
+                    break;
+                  case "'":
+                    r = n.input.substring(n.endIndex);
+                    break;
+                  default:
+                    r = n[+t] || "";
+                }
+                return r;
+              })),
                 "first" === r
                   ? e
                   : t.isEnd
-                  ? e.substring(t.indexInMatch)
-                  : e.substring(
+                    ? e.substring(t.indexInMatch)
+                    : e.substring(
                       t.indexInMatch,
                       t.indexInMatch + t.text.length
                     ));
@@ -422,12 +422,12 @@
               var l = s;
               n.indexInNode > 0 &&
                 ((o = t.createTextNode(l.data.substring(0, n.indexInNode))),
-                l.parentNode.insertBefore(o, l));
+                  l.parentNode.insertBefore(o, l));
               var d = this.getPortionReplacementNode(i, e);
               return (
                 l.parentNode.insertBefore(d, l),
                 i.endIndexInNode < l.length &&
-                  ((a = t.createTextNode(l.data.substring(i.endIndexInNode))),
+                ((a = t.createTextNode(l.data.substring(i.endIndexInNode))),
                   l.parentNode.insertBefore(a, l)),
                 l.parentNode.removeChild(l),
                 this.reverts.push(function () {
@@ -442,9 +442,9 @@
               (a = t.createTextNode(u.data.substring(i.endIndexInNode)));
             for (
               var c = this.getPortionReplacementNode(n, e),
-                f = [],
-                h = 0,
-                g = r.length;
+              f = [],
+              h = 0,
+              g = r.length;
               h < g;
               ++h
             ) {
@@ -484,8 +484,8 @@
       e.exports
         ? (e.exports = o())
         : void 0 ===
-            (i = "function" == typeof (r = o) ? r.call(t, n, t, e) : r) ||
-          (e.exports = i);
+        (i = "function" == typeof (r = o) ? r.call(t, n, t, e) : r) ||
+        (e.exports = i);
   },
   function (e, t, n) {
     "use strict";
@@ -507,7 +507,7 @@
       );
     }
     function u(e) {
-      for (;;) {
+      for (; ;) {
         const t = 0 | e.next();
         if (!(4194304 & t)) {
           return (
@@ -527,7 +527,7 @@
       return 4294967296 * (2097151 & e.next()) + (e.next() >>> 0);
     }
     function c(e) {
-      for (;;) {
+      for (; ;) {
         const t = 0 | e.next();
         if (!(2097152 & t)) {
           return 4294967296 * (2097151 & t) + (e.next() >>> 0);
@@ -543,16 +543,16 @@
       return f(e)
         ? ((t = e), (e) => e.next() & t)
         : (function (e) {
-            const t = e + 1,
-              n = t * Math.floor(4294967296 / t);
-            return (e) => {
-              let r = 0;
-              do {
-                r = e.next() >>> 0;
-              } while (r >= n);
-              return r % t;
-            };
-          })(e);
+          const t = e + 1,
+            n = t * Math.floor(4294967296 / t);
+          return (e) => {
+            let r = 0;
+            do {
+              r = e.next() >>> 0;
+            } while (r >= n);
+            return r % t;
+          };
+        })(e);
       var t;
     }
     function g(e) {
@@ -590,8 +590,8 @@
     function p(e, t) {
       if (
         ((e = Math.floor(e)),
-        (t = Math.floor(t)),
-        e < -9007199254740992 || !isFinite(e))
+          (t = Math.floor(t)),
+          e < -9007199254740992 || !isFinite(e))
       )
         throw new RangeError("Expected min to be at least -9007199254740992");
       if (t > 9007199254740992 || !isFinite(t))
@@ -600,26 +600,26 @@
       return n <= 0 || !isFinite(n)
         ? () => e
         : 4294967295 === n
-        ? 0 === e
-          ? l
-          : a(o, e + 2147483648)
-        : n < 4294967295
-        ? a(h(n), e)
-        : 9007199254740991 === n
-        ? a(d, e)
-        : n < 9007199254740991
-        ? a(g(n), e)
-        : t - 1 - e == 9007199254740991
-        ? a(c, e)
-        : -9007199254740992 === e && 9007199254740992 === t
-        ? u
-        : -9007199254740992 === e && 9007199254740991 === t
-        ? s
-        : -9007199254740991 === e && 9007199254740992 === t
-        ? a(s, 1)
-        : 9007199254740992 === t
-        ? a(m(e - 1, t - 1), 1)
-        : m(e, t);
+          ? 0 === e
+            ? l
+            : a(o, e + 2147483648)
+          : n < 4294967295
+            ? a(h(n), e)
+            : 9007199254740991 === n
+              ? a(d, e)
+              : n < 9007199254740991
+                ? a(g(n), e)
+                : t - 1 - e == 9007199254740991
+                  ? a(c, e)
+                  : -9007199254740992 === e && 9007199254740992 === t
+                    ? u
+                    : -9007199254740992 === e && 9007199254740991 === t
+                      ? s
+                      : -9007199254740991 === e && 9007199254740992 === t
+                        ? a(s, 1)
+                        : 9007199254740992 === t
+                          ? a(m(e - 1, t - 1), 1)
+                          : m(e, t);
     }
     function x(e) {
       return 1 == (1 & e.next());
@@ -632,20 +632,20 @@
         ? null == e
           ? x
           : (function (e) {
-              if (e <= 0) return () => !1;
-              if (e >= 1) return () => !0;
-              {
-                const t = 4294967296 * e;
-                return t % 1 == 0
-                  ? N(o, (t - 2147483648) | 0)
-                  : N(d, Math.round(9007199254740992 * e));
-              }
-            })(e)
+            if (e <= 0) return () => !1;
+            if (e >= 1) return () => !0;
+            {
+              const t = 4294967296 * e;
+              return t % 1 == 0
+                ? N(o, (t - 2147483648) | 0)
+                : N(d, Math.round(9007199254740992 * e));
+            }
+          })(e)
         : e <= 0
-        ? () => !1
-        : e >= t
-        ? () => !0
-        : N(p(0, t - 1), e);
+          ? () => !1
+          : e >= t
+            ? () => !0
+            : N(p(0, t - 1), e);
     }
     function b(e) {
       return p(1, e);
@@ -696,10 +696,10 @@
     const R = (() => {
       try {
         if ("xxx" === "x".repeat(3)) return (e, t) => e.repeat(t);
-      } catch (e) {}
+      } catch (e) { }
       return (e, t) => {
         let n = "";
-        for (; t > 0; ) 1 & t && (n += e), (t >>= 1), (e += e);
+        for (; t > 0;) 1 & t && (n += e), (t >>= 1), (e += e);
         return n;
       };
     })();
@@ -746,7 +746,7 @@
             throw new RangeError("Expected max to be a finite number");
           return a(
             ((r = n ? k : S),
-            1 == (i = t - e) ? r : 0 === i ? () => 0 : (e) => r(e) * i),
+              1 == (i = t - e) ? r : 0 === i ? () => 0 : (e) => r(e) * i),
             e
           );
           var r, i;
@@ -846,7 +846,7 @@
         const e = new ArrayBuffer(4),
           t = new Int32Array(e);
         if (((t[0] = 2147483648), -2147483648 === t[0])) return Int32Array;
-      } catch (e) {}
+      } catch (e) { }
       return Array;
     })();
     (() => {
@@ -857,16 +857,16 @@
       "function" == typeof Math.imul && -5 === Math.imul(4294967295, 5)
         ? Math.imul
         : (e, t) => {
-            const n = 65535 & e,
-              r = 65535 & t;
-            return (
-              (n * r +
-                (((((e >>> 16) & 65535) * r + n * ((t >>> 16) & 65535)) <<
-                  16) >>>
-                  0)) |
-              0
-            );
-          };
+          const n = 65535 & e,
+            r = 65535 & t;
+          return (
+            (n * r +
+              (((((e >>> 16) & 65535) * r + n * ((t >>> 16) & 65535)) <<
+                16) >>>
+                0)) |
+            0
+          );
+        };
     class j {
       constructor() {
         (this.data = new L(624)), (this.index = 0), (this.uses = 0);
@@ -894,13 +894,13 @@
           (this.index = (this.index + 1) | 0),
           (this.uses += 1),
           0 |
-            (function (e) {
-              return (
-                (e ^= e >>> 11),
-                (e ^= (e << 7) & 2636928640),
-                (e ^= (e << 15) & 4022730752) ^ (e >>> 18)
-              );
-            })(e)
+          (function (e) {
+            return (
+              (e ^= e >>> 11),
+              (e ^= (e << 7) & 2636928640),
+              (e ^= (e << 15) & 4022730752) ^ (e >>> 18)
+            );
+          })(e)
         );
       }
       getUseCount() {
@@ -910,7 +910,7 @@
         if (e <= 0) return this;
         for (
           this.uses += e,
-            (0 | this.index) >= 624 && (D(this.data), (this.index = 0));
+          (0 | this.index) >= 624 && (D(this.data), (this.index = 0));
           e + this.index > 624;
 
         )
@@ -1039,7 +1039,7 @@
       if (i)
         return 0 === e.index
           ? (r[0] === r[0].toUpperCase() &&
-              (i = i[0].toUpperCase() + i.slice(1)),
+            (i = i[0].toUpperCase() + i.slice(1)),
             i)
           : "";
       !(function (e) {
@@ -1052,10 +1052,10 @@
       })(n);
       for (
         var o,
-          a = F.integer(Math.max(n.length - 1, 2), n.length + 2),
-          s = $(""),
-          u = n[0] === n[0].toUpperCase() ? s.toUpperCase() : s,
-          l = 1;
+        a = F.integer(Math.max(n.length - 1, 2), n.length + 2),
+        s = $(""),
+        u = n[0] === n[0].toUpperCase() ? s.toUpperCase() : s,
+        l = 1;
         l < a;
         l++
       )

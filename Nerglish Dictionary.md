@@ -57,7 +57,7 @@ i am murloc: "RwlRwlRwlRwl",
 night elf: "kuldurrreee",
 the murloc gods have blessed us: "mglrmglmglmgl"
 fishing nets: "mgrrrl"
-i will kill you: ",rgllll glrrm gl",
+i will kill you: "rgllll glrrm gl"
 
 ## Syllables and Pronunciations
 
