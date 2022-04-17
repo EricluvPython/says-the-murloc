@@ -59,58 +59,33 @@ the murloc gods have blessed us: "mglrmglmglmgl"
 fishing nets: "mgrrrl"
 i will kill you: "rgllll glrrm gl"
 
-## Syllables and Pronunciations
+## English-Nerglish syllables
 
-aa
-au
-bl
-de
-ee
-fl
-fu
-gb
-gg
-gk
-gl
-gm
-gr
-gu
-hl
-hn
-ka
-kg
-kk
-kl
-km
-kr
-le
-lg
-ll
-lo
-lr
-lu
-mg
-mm
-mr
-mu
-n
-nd
-ng
-nk
-og
-ok
-rg
-rk
-rl
-rn
-rr
-ru
-sh
-sk
-sr
-ua
-ug
-uh
-un
-ur
-uu
+'ar': 'a',
+'ml': 'e',
+'rh': 'i',
+'lo': 'o',
+'ur': 'u',
+'lm': 't',
+'sh': 's',
+'mh': 'h',
+'ua': 'w',
+'bk': 'b',
+'mm': 'm',
+'fl': 'f',
+'gk': 'c',
+'ll': 'l',
+'de': 'd',
+'un': 'p',
+'nl': 'n',
+'gg': 'g',
+'rn': 'r',
+'rm': 'y',
+'ok': 'v',
+'gl': 'j',
+'km': 'k',
+'ku': 'q',
+'uu': 'x',
+'gb': 'z'
+
+## Nerglish Syllable Pronunciations and Rules
