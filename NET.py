@@ -5,19 +5,19 @@ import string
 
 def 英转鱼(英文):
 
-    # 匹配所有标点符号
-    标点符号 = '[·’!"\#$%&\'()＃！（）*+,-./:;<=>?\@，：?￥★、…．＞【】［］《》？“”‘’\[\\]^_`{|}~]+'
-    标点位置 = []
+    # 匹配所有标点符号和数字
+    符号 = '[·’!"\#$%&\'()＃！（）*+,-./:;<=>?\@，：?￥★、…．＞【】［］《》？“”‘’\[\\]^_`{|}~]+0123456789'
+    符号位置 = []
     空格位置 = []
-    匹配到的标点 = []
+    匹配到的符号 = []
     for i in range(len(英文)):
-        if 英文[i] in 标点符号:
-            标点位置.append(i)
-            匹配到的标点.append(英文[i])
+        if 英文[i] in 符号:
+            符号位置.append(i)
+            匹配到的符号.append(英文[i])
         if 英文[i] == ' ':
             空格位置.append(i)
     无连字符英文 = 英文.replace('-', ' ')
-    无标点英文 = 无连字符英文.translate(str.maketrans('','', string.punctuation))
+    无符号英文 = 无连字符英文.translate(str.maketrans('','', 符号))
 
     # 翻译所有字典中有的词
     英鱼词典 = {
@@ -69,7 +69,7 @@ def 英转鱼(英文):
         'ringworm': "murguhlum",
         'up': "urka"
     }
-    英文词 = 无标点英文.split(" ")
+    英文词 = 无符号英文.split(" ")
     已翻译词位置 = []
     i = 0
     for i in range(len(英文词)):
@@ -159,7 +159,7 @@ def 英转鱼(英文):
 
     i = 0
     单词i = 0
-    标点i = 0
+    符号i = 0
     空格i = 0
     鱼文 = ''
     while i < len(英文):
@@ -172,17 +172,18 @@ def 英转鱼(英文):
         except:
             pass
         try:
-            if i == 标点位置[标点i]:
-                鱼文 += 匹配到的标点[标点i]
-                标点i += 1
+            if i == 符号位置[符号i]:
+                鱼文 += 匹配到的符号[符号i]
+                符号i += 1
                 i += 1
                 continue
         except:
             pass
         try:
             鱼文 += ''.join(英文词[单词i])
-            i += len(无标点英文.split(" ")[单词i])
+            i += len(无符号英文.split(" ")[单词i])
             单词i += 1
+            continue
         except:
             pass
     return 鱼文
@@ -190,19 +191,19 @@ def 英转鱼(英文):
 
 
 def 鱼转英(鱼文):
-    # 匹配所有标点符号
-    标点符号 = '[·’!"\#$%&\'()＃！（）*+,-./:;<=>?\@，：?￥★、…．＞【】［］《》？“”‘’\[\\]^_`{|}~]+'
-    标点位置 = []
+    # 匹配所有标点符号和数字
+    符号 = '[·’!"\#$%&\'()＃！（）*+,-./:;<=>?\@，：?￥★、…．＞【】［］《》？“”‘’\[\\]^_`{|}~]+0123456789'
+    符号位置 = []
     空格位置 = []
-    匹配到的标点 = []
+    匹配到的符号 = []
     for i in range(len(鱼文)):
-        if 鱼文[i] in 标点符号:
-            标点位置.append(i)
-            匹配到的标点.append(鱼文[i])
+        if 鱼文[i] in 符号:
+            符号位置.append(i)
+            匹配到的符号.append(鱼文[i])
         if 鱼文[i] == ' ':
             空格位置.append(i)
     无连字符鱼文 = 鱼文.replace('-', ' ')
-    无标点鱼文 = 无连字符鱼文.translate(str.maketrans('','', string.punctuation))
+    无符号鱼文 = 无连字符鱼文.translate(str.maketrans('','', 符号))
 
     # 翻译所有字典中有的词
     鱼英词典 = {
@@ -248,7 +249,7 @@ def 鱼转英(鱼文):
         'murguhlum': 'ringworm', 
         'urka': 'up'
     }
-    鱼文词 = 无标点鱼文.split(" ")
+    鱼文词 = 无符号鱼文.split(" ")
     已翻译词位置 = []
     i = 0
     for i in range(len(鱼文词)):
@@ -338,7 +339,7 @@ def 鱼转英(鱼文):
 
     i = 0
     单词i = 0
-    标点i = 0
+    符号i = 0
     空格i = 0
     英文 = ''
     while i < len(鱼文):
@@ -351,26 +352,21 @@ def 鱼转英(鱼文):
         except:
             pass
         try:
-            if i == 标点位置[标点i]:
-                英文 += 匹配到的标点[标点i]
-                标点i += 1
+            if i == 符号位置[符号i]:
+                英文 += 匹配到的符号[符号i]
+                符号i += 1
                 i += 1
                 continue
         except:
             pass
         try:
             英文 += ''.join(鱼文词[单词i])
-            i += len(无标点鱼文.split(" ")[单词i])
+            i += len(无符号鱼文.split(" ")[单词i])
             单词i += 1
         except:
             pass
 
     return 英文
 
-
-英文 = 'The self-study lessons in this section are written and organised according to the levels of the Common European Framework of Reference for languages (CEFR). There are different types of texts and interactive exercises that practise the reading skills you need to do well in your studies, to get ahead at work and to communicate in English in your free time.'
-
-鱼文 = 'Lmmhml shmlllfl-shlmurderm llmlshshlonlsh rhnl lmmhrhsh shmlgklmrhlonl arrnml uarnrhlmlmmlnl n lornggarnlrhshmlde argkgklornderhnlgg lmlo lmmhml llmlokmlllsh lofl lmmhml Gklommmmlonl Mlurrnlounmlarnl Flrnarmmmlualornkm lofl Rnmlflmlrnmlnlgkml fllorn llarnlggurarggmlsh (GkMlFlRn). Lmmhmlrnml arrnml derhflflmlrnmlnllm lmrmunmlsh lofl lmmluulmsh n rhnllmmlrnargklmrhokml mluumlrngkrhshmlsh lmmharlm unrnargklmrhshml lmmhml rnmlarderhnlgg shkmrhllllsh rmlour nlmlmlde lmlo delo uamlllll rhnl rmlourrn shlmurderhmlsh, lmlo ggmllm armhmlarde arlm ualornkm n lmlo gklommmmurnlrhgkarlmml rhnl Mlnlggllrhshmh rhnl rmlourrn flrnmlml lmrhmmml.'
-
-print(英转鱼(英文))
-print(鱼转英(鱼文))
+print(英转鱼("Error: 404 not found."))
+print(鱼转英("Mlrnrnlorn: 404 nllolm fllournlde."))
