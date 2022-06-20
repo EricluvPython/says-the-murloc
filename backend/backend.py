@@ -1,6 +1,5 @@
 from flask import Flask,render_template
 from flask_socketio import SocketIO, emit
-from flask_cors import CORS
 from settings import NAMESPACE
 from NET import *
 
@@ -9,7 +8,6 @@ app = Flask(__name__)
 #app.config['CORS_AUTOMATIC_OPTIONS'] = True
 #app.config['CORS_SUPPORTS_CREDENTIALS'] = True
 
-#CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 @socketio.on('connect', namespace=NAMESPACE)
