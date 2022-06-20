@@ -16,11 +16,19 @@ export default function App(){
 
     useEffect(() => {
         try{
-            const newSocket = IO(`http://${window.location.hostname}:5000/translate`);
+            const newSocket = IO(`http://${window.location.hostname}:2333/translate`);
             setSocket(newSocket);
             return () => newSocket.close();
         } catch(e) {
             console.log(e);
+            try{
+                newSocket = IO(`https://${window.location.hostname}:2333/translate`);
+                setSocket(newSocket);
+                return () => newSocket.close();
+            }
+            catch(ee){
+                console.log(ee);
+            }
         }
     }, [setSocket]);
 

@@ -1,16 +1,16 @@
 from flask import Flask,render_template
 from flask_socketio import SocketIO, emit
+from flask_cors import CORS
 from settings import NAMESPACE
 from NET import *
 
 app = Flask(__name__)
 
-'''app.config['CORS_AUTOMATIC_OPTIONS'] = True
-app.config['CORS_SUPPORTS_CREDENTIALS'] = True
+#app.config['CORS_AUTOMATIC_OPTIONS'] = True
+#app.config['CORS_SUPPORTS_CREDENTIALS'] = True
 
-CORS(app)'''
-socketio = SocketIO()
-socketio.init_app(app)
+#CORS(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 @socketio.on('connect', namespace=NAMESPACE)
 def connect():
@@ -42,5 +42,5 @@ def hello_world():
 
 if __name__=="__main__":
     print("haha --@DaivdYuan")
-    socketio.run(app,host='localhost',port=5000,debug=True,log_output=True)
+    socketio.run(app,host='localhost',port=2333,debug=False,log_output=True)
     print("MAIN","quitting")
